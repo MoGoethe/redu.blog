@@ -27,6 +27,9 @@ module.exports = {
 			}
 		]
 	},
+	resolve:{
+		extensions:[ '.js' , '.jsx' , '.json']
+	},
 	devServer:{
 		contentBase:"./virtual",
 		hot:true,

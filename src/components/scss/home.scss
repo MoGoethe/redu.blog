@@ -1,0 +1,138 @@
+@import "base";
+
+.top-wrap{
+	width:100%;
+	padding:50px 0 30px;
+	.top-logo{
+		width: auto;
+		height: 40px;
+		line-height: 40px;
+		float: left;
+		overflow: hidden;
+		.logo-img{
+			height: 40px;
+			margin-right: 10px;
+			display: block;
+			float: left;
+		}
+		.logo-title{
+			float: left;
+			font-size: 16px;
+			color: $blue;
+			
+		}
+	}
+}
+
+.article-wrap{
+	margin-top:50px;
+}
+.classify-item{
+	position:relative;
+	&.classify-item-fir{
+		margin-top: 10px;
+		.classify-item-title{
+			line-height: 40px;
+			.time{
+				color: #444;
+				font-size: 16px;
+				.anticon{
+					margin-right: 4px;
+				}
+			}
+		}
+	}
+	.classify-item-title{
+		line-height: 30px;
+		display: inline-block;
+		font-size: 14px;
+		&:hover{
+			.time{
+				color: #333;
+			}
+			a{
+				color: $blue;
+				text-decoration: underline;
+			}
+		}
+		.time{
+			color: #999;
+			margin-right: 25px;
+			transition: color .2s;
+		}
+		a{
+			color: #666;
+			transition: color .2s;
+		}
+	}
+}
+
+.timeline-view{
+	margin-bottom:20px;
+	.tl-main{
+		width: auto;
+		height: auto;
+		overflow: hidden;
+		font-size: 12px;
+		color: #666;
+		padding:20px 21px;
+		border:1px solid #ddd;
+		border-radius: 4px;
+		&:after{
+			@include floatFun();
+		}
+	}
+	.tl-left{
+		float: left;
+		width: 30px;
+		margin-right: 8px;
+		.tl-title{
+			height: auto;
+			.tl-item{
+				display: block;
+				height: 12px;
+				width: 30px;
+				line-height: 12px;
+				margin-top: 12px;
+				text-align: right;
+				&:first-child{
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+	.tl-right{
+		float: left;
+		&:after{
+			@include floatFun();
+		}
+		.react{
+			width: 11px;
+			margin-right: 2px;
+			float: left;
+			.react-item{
+				display: block;
+				width: 10px;
+				height: 10px;
+				background-color: #ddd;
+				margin:0;
+				margin-bottom: 2px;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

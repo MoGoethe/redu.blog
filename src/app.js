@@ -10,8 +10,6 @@ import App from "./containers/index.jsx"
 const middleware = [ thunk ]
 process.env.NODE_ENV !== 'production' ? middleware.push(createLogger()) : ''
 
-console.log(middleware);
-
 const store = createStore(Reducer,applyMiddleware(...middleware))
 
 render(

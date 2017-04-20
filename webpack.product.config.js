@@ -8,6 +8,9 @@ module.exports = {
 		path:__dirname + "/dist",
 		filename: "[name].build.js"
 	},
+	resolve:{
+		extensions:[ '.js' , '.jsx' , '.json']
+	},
 	module:{
 		loaders:[
 			{
