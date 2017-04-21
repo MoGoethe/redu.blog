@@ -1,29 +1,5 @@
 @import "base";
 
-.top-wrap{
-	width:100%;
-	padding:50px 0 30px;
-	.top-logo{
-		width: auto;
-		height: 40px;
-		line-height: 40px;
-		float: left;
-		overflow: hidden;
-		.logo-img{
-			height: 40px;
-			margin-right: 10px;
-			display: block;
-			float: left;
-		}
-		.logo-title{
-			float: left;
-			font-size: 16px;
-			color: $blue;
-			
-		}
-	}
-}
-
 .article-wrap{
 	margin-top:50px;
 }
@@ -68,15 +44,35 @@
 }
 
 .timeline-view{
-	margin-bottom:20px;
+	margin-bottom:40px;
+	padding:20px 21px 15px 21px;
+	border:1px solid #ddd;
+	.tl-head{
+		width: 688px;
+		display: block;
+		margin-left: 38px;
+		overflow: hidden;
+		.tl-month{
+			width: 1376px;
+			display: block;
+			height: 14px;
+			line-height: 14px;
+			margin-bottom: 5px;
+			.tl-month-title{
+				display: block;
+				height: 14px;
+				float: left;
+				width: 57.333px;
+				text-align: center;
+				font-size: 13px;
+			}
+		}
+	}
 	.tl-main{
 		width: auto;
 		height: auto;
-		overflow: hidden;
 		font-size: 12px;
 		color: #666;
-		padding:20px 21px;
-		border:1px solid #ddd;
 		border-radius: 4px;
 		&:after{
 			@include floatFun();
@@ -98,6 +94,7 @@
 				&:first-child{
 					margin-top: 10px;
 				}
+				
 			}
 		}
 	}
@@ -110,18 +107,72 @@
 			width: 11px;
 			margin-right: 2px;
 			float: left;
-			.react-item{
+			
+		}
+	}
+	.react-item{
+		display: block;
+		width: 10px;
+		height: 10px;
+		background-color: #ddd;
+		margin:0;
+		margin-bottom: 2px;
+		position:relative;
+		&:hover .today-contribtions{ display:block;}
+	}
+	.tl-footer{
+		font-size:13px;
+		.info-main{
+			display: block;
+			margin-top: 5px;
+			.lable{
 				display: block;
-				width: 10px;
-				height: 10px;
-				background-color: #ddd;
-				margin:0;
-				margin-bottom: 2px;
+				float:right;
 			}
+		}
+		em{
+			font-style: normal;
+			margin: 0 1px;
+			vertical-align: middle;
+		}
+		.react-item{
+			display: inline-block;
+			margin: 0 1px;
+			vertical-align: middle;
+		}
+	}
+	.today-contribtions{
+		display:none;
+		position:absolute;
+		top: -50px;
+		left: -95px;
+		z-index: 99;
+		width: 180px;
+		height: 20px;
+		line-height: 20px;
+		padding: 10px;
+		font-size: 12px;
+		color: #959da5;
+		text-align: center;
+		background: rgba(0,0,0,0.8);
+		border-radius: 3px;
+		strong{
+			color: #dfe2e5;
+		}
+		&:after {
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			width: 5px;
+			height: 5px;
+			box-sizing: border-box;
+			margin: 0 0 0 -5px;
+			content: " ";
+			border: 5px solid transparent;
+			border-top-color: rgba(0,0,0,0.8);
 		}
 	}
 }
-
 
 
 

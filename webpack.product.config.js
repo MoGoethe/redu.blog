@@ -3,7 +3,10 @@ var CleanPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-	entry:"./src/app.js",
+	entry:{
+		home:"./src/home.js",
+		detail:"./src/detail.js"
+	},
 	output:{
 		path:__dirname + "/dist",
 		filename: "[name].build.js"

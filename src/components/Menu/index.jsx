@@ -7,11 +7,13 @@ import MenuItem from "./MenuItem"
 const Menu = () =>{
 	const MenuListData = [
 		{
+			id:0,
 			isActive:true,
 			iconClass:'anticon-bars',
 			iconName:'时间轴',
 		},
 		{
+			id:1,
 			isActive:false,
 			iconClass:'anticon-tags',
 			iconName:'标签',
@@ -23,7 +25,7 @@ const Menu = () =>{
 				<div className="header-menu">
 					<ul className="menu-list">
 					{
-						MenuListData.map(item=><MenuItem iconClass={item.iconClass} iconName={ item.iconName } isActive = { item.isActive }  />)
+						MenuListData.map(item=><MenuItem iconClass={item.iconClass} iconName={ item.iconName } isActive = { item.isActive } key={ item.id } />)
 					}
 					</ul>
 				</div>

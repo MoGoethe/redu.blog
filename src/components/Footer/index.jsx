@@ -4,9 +4,9 @@ const Footer = () =>(
 	<div className="footer">
 		<div className="main">
 			<p className="site-info">
-				<span>SEASEEYOUL</span>
-				<span>@seaseeyoul@qq.com</span>
-				<span>@copyright 1234548668768</span>
+				<span>技术支持：SEASEEYOUL </span>
+				<span> 粤ICP备17044077 </span>
+				<span> @seaseeyoul@qq.com</span>
 			</p>
 		</div>
 	</div>

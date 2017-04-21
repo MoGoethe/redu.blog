@@ -4,10 +4,16 @@ var CleanPlugin = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry:"./src/app.js",
+	entry:{
+		home:"./src/home.js",
+		detail:"./src/detail.js"
+	},
 	output:{
 		path:__dirname + "/dist",
-		filename: "bundle.js"
+		filename: "[name].bundle.js"
+	},
+	resolve:{
+		extensions:[ '.js' , '.jsx' , '.json']
 	},
 	module:{
 		loaders:[
@@ -27,9 +33,6 @@ module.exports = {
 			}
 		]
 	},
-	resolve:{
-		extensions:[ '.js' , '.jsx' , '.json']
-	},
 	devServer:{
 		contentBase:"./virtual",
 		hot:true,
@@ -43,7 +46,7 @@ module.exports = {
 		new webpack.DefinePlugin({
 			//去掉react中的警告，react会自己判断
 			'process.env': {
-				NODE_ENV: '"production"'
+				NODE_ENV: '"Development"'
 			}
 		}),
 /*		new HtmlWebpackPlugin({
