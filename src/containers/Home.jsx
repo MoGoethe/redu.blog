@@ -7,6 +7,7 @@ import "../components/scss/home.scss"
 import TimeLineView from "../components/timeLineView"
 import ArtcileList from "../components/ArticleList"
 import Header from "../components/Header"
+import FriendlyLink from "../components/FriendlyLink"
 import Footer from "../components/Footer"
 import Menu from "../components/Menu"
 import TagsView from "../components/TagsView"
@@ -30,11 +31,14 @@ class App extends Component{
 				<Menu />
 				<div className="main">
 					<div className="article-wrap">
-						<TimeLineView contribtionsData ={ contribtionsData } />
-						<TagsView />
+						<div className="show-view">
+							<TimeLineView contribtionsData ={ contribtionsData } />
+							{/*<TagsView />*/}
+						</div>
 						<ArtcileList listData={ articleList } />
 					</div>
 				</div>
+				<FriendlyLink />
 				<Footer />
 			</div>
 		)

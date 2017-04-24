@@ -10,6 +10,7 @@ import ArticleDetail from "../components/Article/ArticleDetail"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Menu from "../components/Menu"
+import FriendlyLink from "../components/FriendlyLink"
 
 const App = () =>{
 	return (<div>
@@ -18,6 +19,7 @@ const App = () =>{
 			<Article>
 				<ArticleDetail />
 			</Article>
+			<FriendlyLink />
 			<Footer />
 		</div>
 	)

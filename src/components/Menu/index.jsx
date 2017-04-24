@@ -1,8 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import MenuItem from "./MenuItem"
-
-
+import { toggleShowView } from "../../actions"
 
 const Menu = () =>{
 	const MenuListData = [
@@ -25,7 +24,7 @@ const Menu = () =>{
 				<div className="header-menu">
 					<ul className="menu-list">
 					{
-						MenuListData.map(item=><MenuItem iconClass={item.iconClass} iconName={ item.iconName } isActive = { item.isActive } key={ item.id } />)
+						MenuListData.map(item=><MenuItem iconClass={item.iconClass}  iconName={ item.iconName } isActive = { item.isActive } key={ item.id } />)
 					}
 					</ul>
 				</div>

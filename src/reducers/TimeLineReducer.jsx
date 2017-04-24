@@ -68,7 +68,6 @@ const TimeLineReducer = (state = INITIAL_STATE , action ) =>{
 
 	switch(action.type){
 		case GET_CONTRIBTIONS :
-
 			return state.update("contribtionsData",()=>fromJS(action.data));
 			break;
 		default:

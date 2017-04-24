@@ -16,7 +16,6 @@ const timeLineView = ({contribtionsData}) =>{
 	}
 
 	return (
-		<div className="show-view">
 			<div className="timeline-view" >
 				<div className="tl-head">
 					<p className="tl-month" style={{marginLeft:getMonthPos()}}>
@@ -74,7 +73,6 @@ const timeLineView = ({contribtionsData}) =>{
 					</p>
 				</div>
 			</div>
-		</div>
 	)
 }
 
