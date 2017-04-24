@@ -1,64 +1,9 @@
 import React from "react"
-import Mock from "mockjs"
+import { connect } from "react-redux"
 import TimeLineItem from "./TimeLineItem"
+import uuid from "uuid"
 
-const timeLineView = () =>{
-
-	const timeLineData = [
-		[0,0,2,0,0,0,3],
-		[0,3,3,1,5,0,0],
-		[0,3,1,0,0,1,0],
-		[0,0,0,1,0,0,0],
-		[4,2,0,5,0,0,0],
-		[0,0,2,3,0,0,0],
-		[1,0,1,4,0,3,0],
-		[0,4,2,0,1,0,0],
-		[0,0,0,5,0,0,3],
-		[0,0,0,2,0,0,2],
-		[4,0,3,0,4,0,0],
-		[0,2,0,0,2,0,1],
-		[0,0,2,2,0,0,1],
-		[4,0,0,3,0,0,0],
-		[0,0,4,3,4,0,2],
-		[3,0,4,0,0,0,1],
-		[3,0,0,0,0,0,4],
-		[0,0,0,4,0,0,1],
-		[4,0,3,0,3,2,0],
-		[2,0,0,1,3,0,0],
-		[5,0,0,4,0,4,2],
-		[0,0,0,0,2,0,2],
-		[0,3,0,0,2,2,0],
-		[2,4,0,0,0,3,1],
-		[3,4,2,0,0,4,0],
-		[2,0,0,0,2,3,0],
-		[0,0,0,0,1,0,4],
-		[4,0,0,3,3,0,0],
-		[0,0,1,0,0,0,2],
-		[0,0,0,0,3,3,0],
-		[0,0,0,0,0,5,0],
-		[0,4,4,3,0,5,0],
-		[0,0,1,0,3,0,0],
-		[1,0,0,0,0,0,0],
-		[0,0,0,4,0,4,0],
-		[0,1,0,1,2,0,3],
-		[3,0,0,3,3,0,0],
-		[0,0,0,0,3,3,0],
-		[1,0,0,0,0,5,1],
-		[3,5,0,3,0,4,0],
-		[0,3,0,0,0,0,5],
-		[1,4,0,1,0,0,4],
-		[0,1,0,2,2,0,0],
-		[0,4,3,0,0,4,4],
-		[0,2,0,4,0,0,2],
-		[0,2,0,0,2,1,3],
-		[2,0,2,0,5,4,3],
-		[0,2,4,0,0,0,0],
-		[0,0,0,4,0,3,2],
-		[4,0,2,4,2,0,0],
-		[0,0,0,4,0,3,2],
-		[0,0,3,0,0,0,0],
-		[0,3,1,4,0,3,2]
-	]
+const timeLineView = ({contribtionsData}) =>{
 
 	const getMonthPos = () =>{
 		let  d1 = new Date()
@@ -111,15 +56,15 @@ const timeLineView = () =>{
 					</div>
 					<div className="tl-right">
 					{	
-						timeLineData.map(item=><TimeLineItem oneWeekData = { item }  />)
+						contribtionsData.getIn(["contribtionsData","oneDayData"]).map(item=><TimeLineItem oneWeekData = { item } key={uuid.v1()}  />)
 					}
 					</div>
 				</div>
 				<div className="tl-footer">
-					<p className="info-main">Total：108 Contributions 
+					<p className="info-main">Total：{ contribtionsData.getIn(["contribtionsData","total"]) } Contributions 
 						<span className="lable">
 							<em>Less </em>
-							<i className="react-item" style={{backgroundColor:'#ddd'}}></i>
+							<i className="react-item" style={{backgroundColor:'#DDDDDD'}}></i>
 							<i className="react-item" style={{backgroundColor:'#C4E3FA'}}></i>
 							<i className="react-item" style={{backgroundColor:'#93CCF5'}}></i>
 							<i className="react-item" style={{backgroundColor:'#56AFEF'}}></i>
@@ -132,6 +77,5 @@ const timeLineView = () =>{
 		</div>
 	)
 }
-
 
 export default timeLineView

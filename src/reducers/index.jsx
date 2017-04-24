@@ -1,5 +1,10 @@
-const reducer = () =>{
-	return {}
-}
+import { combineReducers } from 'redux'
+import ArticleListReducer from './ArticleListReducer'
+import TimeLineReducer from './TimeLineReducer'
 
-export default reducer
+const Reducers = combineReducers({
+	ArticleListReducer,
+	TimeLineReducer,
+})
+
+export default Reducers

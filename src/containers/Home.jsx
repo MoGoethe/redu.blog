@@ -10,25 +10,42 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Menu from "../components/Menu"
 import TagsView from "../components/TagsView"
+import { toJS } from "immutable"
+import { getInitData } from "../actions"
+import { GET_ARTICLE_LIST , GET_CONTRIBTIONS } from "../actions"
 
-const App = () =>{
-	return (<div>
-			<Header />
-			<Menu />
-			<div className="main">
-				<div className="article-wrap">
-					{/*<TimeLineView />*/}
-					<TagsView />
-					<ArtcileList />
+class App extends Component{
+
+	componentDidMount(){
+		const { dispatch , APIconfig } = this.props 
+		dispatch(getInitData(APIconfig.timeLineDataUrl, GET_CONTRIBTIONS))
+		dispatch(getInitData(APIconfig.articleListDataUrl, GET_ARTICLE_LIST))
+	}
+
+	render(){
+		const { articleList , contribtionsData } = this.props
+
+		return (<div>
+				<Header />
+				<Menu />
+				<div className="main">
+					<div className="article-wrap">
+						<TimeLineView contribtionsData ={ contribtionsData } />
+						<TagsView />
+						<ArtcileList listData={ articleList } />
+					</div>
 				</div>
+				<Footer />
 			</div>
-			<Footer />
-		</div>
-	)
+		)
+	}
 }
 
 const mapStateToProps = state =>{
-	return state
+	return {
+		articleList:state.ArticleListReducer,
+		contribtionsData:state.TimeLineReducer,
+	}
 }
 
 export default connect(mapStateToProps)(App)
