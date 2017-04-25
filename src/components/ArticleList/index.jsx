@@ -12,6 +12,7 @@ const ArtcileList = ({listData})=>(
 					title={ item.get("title")  }
 					url={ item.get("url") } 
 					time={ item.get("time") } 
+					linkId = { item.get("linkId") ? item.get("linkId") : '' }
 				/>)
 			}
 		</ul>

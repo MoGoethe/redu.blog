@@ -12,8 +12,7 @@ import Footer from "../components/Footer"
 import Menu from "../components/Menu"
 import TagsView from "../components/TagsView"
 import { toJS } from "immutable"
-import { getInitData } from "../actions"
-import { GET_ARTICLE_LIST , GET_CONTRIBTIONS } from "../actions"
+import { GET_ARTICLE_LIST , GET_CONTRIBTIONS , getInitData , GET_TAGS_DATA} from "../actions"
 
 class App extends Component{
 
@@ -21,19 +20,23 @@ class App extends Component{
 		const { dispatch , APIconfig } = this.props 
 		dispatch(getInitData(APIconfig.timeLineDataUrl, GET_CONTRIBTIONS))
 		dispatch(getInitData(APIconfig.articleListDataUrl, GET_ARTICLE_LIST))
+		dispatch(getInitData(APIconfig.tagsDataUrl, GET_TAGS_DATA))
 	}
 
 	render(){
-		const { articleList , contribtionsData } = this.props
-
+		const { articleList , contribtionsData , menuData , dispatch ,tagsData } = this.props
 		return (<div>
 				<Header />
-				<Menu />
+				<Menu _dispatch={dispatch} menuListData={ menuData.get("menuListData").toJS() } currentMenuItem = {menuData.get("currentMenuItem")} />
 				<div className="main">
 					<div className="article-wrap">
 						<div className="show-view">
-							<TimeLineView contribtionsData ={ contribtionsData } />
-							{/*<TagsView />*/}
+							{
+								menuData.get("showViewType")=== 0 ?
+								<TimeLineView contribtionsData ={ contribtionsData } />
+								:
+								<TagsView tagsData ={ tagsData.getIn(["tagsData","tagsListData"]).toJS() } />
+							}							
 						</div>
 						<ArtcileList listData={ articleList } />
 					</div>
@@ -49,6 +52,8 @@ const mapStateToProps = state =>{
 	return {
 		articleList:state.ArticleListReducer,
 		contribtionsData:state.TimeLineReducer,
+		tagsData:state.TagsReducer,
+		menuData:state.InitReducer,
 	}
 }
 

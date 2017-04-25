@@ -17,6 +17,7 @@ const store = createStore(Reducer,applyMiddleware(...middleware))
 const APIConfig = {
 	"timeLineDataUrl": "./TimeLineData.json",
 	"articleListDataUrl":"./ArticleListData.json",
+	"tagsDataUrl":"./TagsData.json"
 }
 
 render(

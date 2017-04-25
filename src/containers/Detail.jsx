@@ -11,22 +11,30 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Menu from "../components/Menu"
 import FriendlyLink from "../components/FriendlyLink"
+			
+class App extends Component{
 
-const App = () =>{
-	return (<div>
-			<Header />
-			<Menu />
-			<Article>
-				<ArticleDetail />
-			</Article>
-			<FriendlyLink />
-			<Footer />
-		</div>
-	)
+	render(){
+		const { articleList , contribtionsData , menuData , dispatch } = this.props
+		return (<div>
+				<Header />
+				<Menu _dispatch={dispatch} menuListData={ menuData.get("menuListData").toJS() } currentMenuItem = {menuData.get("currentMenuItem")} />
+				<Article>
+					<ArticleDetail />
+				</Article>
+				<FriendlyLink />
+				<Footer />
+			</div>
+		)
+	}
 }
 
 const mapStateToProps = state =>{
-	return state
+	return {
+		articleList:state.ArticleListReducer,
+		contribtionsData:state.TimeLineReducer,
+		menuData:state.InitReducer,
+	}
 }
 
 export default connect(mapStateToProps)(App)

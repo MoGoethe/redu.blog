@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 	imagemin = require('gulp-imagemin');
 	cleanCSS = require('gulp-clean-css');
 gulp.task('styles',function(){
-	gulp.src('./src/components/*.scss')		
+	gulp.src('./src/components/scss/*.scss')		
 	.pipe(sass())		
 	.pipe(autoprefixer('last 2 version'))
 	.pipe(concat('main.css'))

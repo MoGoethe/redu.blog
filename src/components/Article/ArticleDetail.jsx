@@ -1,7 +1,7 @@
 import React from "react"
 
 const ArticleDetail = () =>(
-<div>
+<div className="markdown">
 	<div className="article-info">
 		<h2>我在南方遛狗，你在彼岸出走。</h2>
 		<p className="about-info"><span>2015-05-06</span><span><a href="#">#故事</a><a href="#">#唐诗远</a></span><span><i className="anticon anticon-bulb"></i>236</span><span><i className="anticon anticon-heart"></i>236</span><span><i className="anticon anticon-message"></i>26</span></p>
@@ -127,14 +127,6 @@ const ArticleDetail = () =>(
 		<p>我说，点点，快跑！</p>
 		<p><br /></p>
 		<p>作者唐诗远 &nbsp; 转载无需询问，请著名作者，来自简书APP</p>
-	</div>
-	<div className="article-action">
-		<div className="action-list">
-			<a href=""><i className="anticon anticon-heart-o"></i>|<span>喜欢</span></a>
-			<a href=""><i className="anticon anticon-heart-o"></i></a>
-			<a href=""><i className="anticon anticon-heart-o"></i></a>
-			<a href=""><i className="anticon anticon-heart-o"></i></a>
-		</div>
 	</div>
 </div>
 )
