@@ -8,7 +8,7 @@ module.exports = {
 		detail:"./src/detail.js"
 	},
 	output:{
-		path:__dirname + "/dist",
+		path:__dirname + "/js",
 		filename: "[name].build.js"
 	},
 	resolve:{

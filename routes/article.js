@@ -2,7 +2,7 @@ var express = require('express');
 
 var router = express.Router();
 
-router.get('/p/:id',function(req, res, next) {
+router.get('/p/:id',data,function(req, res, next) {
 	res.render('article');
 });
 

@@ -39,8 +39,8 @@ app.use('/', routerIndex);
 app.use('/', routerArticle);
 
 //启动服务
-const server = app.listen(8088, function () {
-	console.log('server listening at http://127.0.0.1:8088');
+const server = app.listen(8089, function () {
+	console.log('server listening at http://127.0.0.1:8089');
 });
 
 
